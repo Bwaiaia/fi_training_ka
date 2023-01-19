@@ -64,10 +64,11 @@ class VillageController extends Controller
      * @param  \App\Models\Employee  $employee
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show($uuid)
     {
-        $village = village::find($id);
-        $islands = island::find($id);
+
+        $village = village::where('uuid', $uuid)->firstOrFail();
+        $islands = island::find($uuid);
 		return view('villages.show')
 	        ->with('village',$village)
             ->with('islands',$islands);
@@ -81,7 +82,7 @@ class VillageController extends Controller
      */
     public function edit($id)
     {
-        $village = village::find($id);
+        $village = village::where('uuid', $id)->firstOrFail();
         $islands = Island::all()->toArray();
       
 		return view('villages.edit')->withVillage($village)
@@ -99,7 +100,7 @@ class VillageController extends Controller
     {
         // $village = $request->all();
      
-        $data = Village::find($id)->update($request->all());
+        $data = Village::where($id)->update($request->all());
 
 
            return redirect()->route('village.index')->with('message', 'Updated successfully.');

@@ -36,14 +36,7 @@
                                                 <p>{{$village['id']}}</p>
                                             </div>
                                         </div>
-                                        <div class="row">
-                                            <div class="col-md-6">
-                                                <label>Unique ID:</label>
-                                            </div>
-                                            <div class="col-md-6">
-                                                <p>{{$village['uuid']}}</p>
-                                            </div>
-                                        </div>
+                                        
                                         <div class="row">
                                             <div class="col-md-6">
                                                 <label>Village Name:</label>
