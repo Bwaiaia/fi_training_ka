@@ -7,14 +7,14 @@
           <div class="box-header with-border">
            <h3 class="box-title">{{ __('ENTER VILLAGE DETAILS') }}</h3>   
          </div>
-          <form method="POST" enctype="multipart/form-data" id="upload-file" action="{{ route('village.update', $village->id) }}" >
+          <form method="POST" enctype="multipart/form-data" id="upload-file" action="{{ route('village.update', $village->uuid) }}" >
              @csrf
 
              <input type="hidden" name="_method" value="PATCH">
                                 <input type="hidden" name="_token" value="{{ csrf_token() }}">   
               <div class="row gx-5">
                   <div class="form-group col-md-12">
-                  <label for="village_description" class="fg-grey">Village Name</label>
+                  <label for="village_description" class="fg-grey">Island Name</label>
                   <select name="island_id" id="island_id" class="form-control">
                      <option value="" selected disabled>{{ __('Select one') }}</option>
                      @foreach($islands as $island)

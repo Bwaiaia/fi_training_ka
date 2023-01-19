@@ -17,7 +17,7 @@
                 <div class="col-lg-7">
                     <div class="mb-4">
                     <form method="post">
-                    <a  class="d-inline-block text-primary text-uppercase " href="{{route('village.edit',$village->id)}}">Edit village Profile</a>
+                    <a  class="d-inline-block text-primary text-uppercase " href="{{route('village.edit',$village->uuid)}}">Edit village Profile</a>
                     <h3>Village-Info</h3>
                     </form>
                     </div>
@@ -34,6 +34,14 @@
                                             </div>
                                             <div class="col-md-6">
                                                 <p>{{$village['id']}}</p>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <label>Unique ID:</label>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <p>{{$village['uuid']}}</p>
                                             </div>
                                         </div>
                                         <div class="row">
