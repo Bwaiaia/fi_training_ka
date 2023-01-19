@@ -82,8 +82,8 @@
                            
                            
                             <td class="text-center">
-                            <a class="btn btn-info text-center" href="{{route('village.show', $village['id'])}}">Show</a>      
-                               <a href="{{ route('village.edit', $village['id']) }}"><i class="icon fa fa-edit"></i> {{ __('Edit') }}</a>
+                            <a class="btn btn-info text-center" href="{{route('village.show', $village['uuid'])}}">Show</a>      
+                               <a href="{{ route('village.edit', $village['uuid']) }}"><i class="icon fa fa-edit"></i> {{ __('Edit') }}</a>
                               
                             </td>
                         </tr>
