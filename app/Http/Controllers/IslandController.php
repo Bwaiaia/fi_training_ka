@@ -54,12 +54,6 @@ class IslandController extends Controller
         return redirect()->route('island.index');
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\Employee  $employee
-     * @return \Illuminate\Http\Response
-     */
     public function show($uuid)
     {
         $island = Island::where('uuid', $uuid)->firstOrFail();
@@ -68,29 +62,17 @@ class IslandController extends Controller
 	        ->with('island',$island);
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\Employee  $employee
-     * @return \Illuminate\Http\Response
-     */
     public function edit($uuid)
     {
         $island = island::where('uuid', $uuid)->firstOrFail();
 		return view('islands.edit')->withIsland($island);
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Employee  $employee
-     * @return \Illuminate\Http\Response
-     */
-    public function update(IslandUpdateRequest $request, $uuid)
+
+    public function update(Request $request, $uuid)
     {
         // $island = $request->all();
-     
+
         $data = Island::find($uuid)->update($request->all());
 
 
