@@ -11,7 +11,7 @@
              @csrf
               <div class="row gx-5">
                   <div class="form-group col-md-12">
-                  <label for="village_description" class="fg-grey">Village Name</label>
+                  <label for="village_description" class="fg-grey">Island Name</label>
                   <select name="island_id" id="island_id" class="form-control">
                      <option value="" selected disabled>{{ __('Select one') }}</option>
                      @foreach($islands as $island)
