@@ -68,11 +68,11 @@
                     </thead>
                     <tbody id="myTable">
                         @php $sl = 1; @endphp
-                        @php $u = 0; @endphp
+                        
                         @foreach($villages as $village)
                         <tr>
                             <td>{{ $sl++ }}</td>
-                            <td>{{ $u++ }}</td>
+                            
                             <td>{{ $village['village_name'] }}</td>
                             <td>{{ $village->island->island_name }}</td>
                             
