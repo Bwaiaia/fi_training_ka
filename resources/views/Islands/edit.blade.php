@@ -25,7 +25,7 @@
                                 </div>
                             </div>
                             <div class="box-body">
-                            <form action="{{ route('island.update',$island['id']) }}" method="post" enctype="multipart/form-data">
+                            <form action="{{ route('island.update',$island['uuid']) }}" method="post" enctype="multipart/form-data">
                             @csrf
 
 

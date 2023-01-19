@@ -76,7 +76,7 @@ class IslandController extends Controller
      */
     public function edit($uuid)
     {
-        $island = island::where('uuid', $uuid)->firstOrFail;
+        $island = island::where('uuid', $uuid)->firstOrFail();
 		return view('islands.edit')->withIsland($island);
     }
 
@@ -87,11 +87,11 @@ class IslandController extends Controller
      * @param  \App\Models\Employee  $employee
      * @return \Illuminate\Http\Response
      */
-    public function update(IslandUpdateRequest $request, $id)
+    public function update(IslandUpdateRequest $request, $uuid)
     {
         // $island = $request->all();
      
-        $data = Island::find($id)->update($request->all());
+        $data = Island::find($uuid)->update($request->all());
 
 
            return redirect()->route('island.index')->with('message', 'Updated successfully.');
