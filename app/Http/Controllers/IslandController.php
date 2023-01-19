@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use Illuminate\Support\Str;
 use App\Models\Employee;
 use Illuminate\Http\Request;
 use App\Http\Requests\IslandStoreRequest;
@@ -43,12 +43,12 @@ class IslandController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(IslandStoreRequest $request)
+    public function store(Request $request)
     {
             $input = $request->all();
             // dd($input);
         
-            $results = Island::create($input);
+            $results = Island::create(['uuid'=>Str::uuid(), 'island_name'=>$request->island_id]);
 
 
         return redirect()->route('island.index');
@@ -60,9 +60,9 @@ class IslandController extends Controller
      * @param  \App\Models\Employee  $employee
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show($uuid)
     {
-        $island = Island::find($id);
+        $island = Island::where('uuid', $uuid)->firstOrFail();
 
 		return view('islands.show')
 	        ->with('island',$island);
@@ -74,9 +74,9 @@ class IslandController extends Controller
      * @param  \App\Models\Employee  $employee
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit($uuid)
     {
-        $island = island::find($id);
+        $island = island::where('uuid', $uuid)->firstOrFail;
 		return view('islands.edit')->withIsland($island);
     }
 

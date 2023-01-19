@@ -80,8 +80,8 @@
                            
                            
                             <td class="text-center">
-                            <a class="btn btn-info text-center" href="{{route('island.show', $island['id'])}}">Show</a>      
-                               <a href="{{ route('island.edit', $island['id']) }}"><i class="icon fa fa-edit"></i> {{ __('Edit') }}</a>
+                            <a class="btn btn-info text-center" href="{{route('island.show', $island['uuid'])}}">Show</a>      
+                               <a href="{{ route('island.edit', $island['uuid']) }}"><i class="icon fa fa-edit"></i> {{ __('Edit') }}</a>
                               
                             </td>
                         </tr>

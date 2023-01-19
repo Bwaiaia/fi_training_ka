@@ -96,13 +96,10 @@ class VillageController extends Controller
      * @param  \App\Models\Employee  $employee
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, $uuid)
     {
         // $village = $request->all();
-     
-        $data = Village::where($id)->update($request->all());
-
-
+        $data = Village::find($uuid)->update($request->all());
            return redirect()->route('village.index')->with('message', 'Updated successfully.');
     }
 
