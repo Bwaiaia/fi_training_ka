@@ -2,8 +2,10 @@
 
 namespace Database\Seeders;
 
+//use Illuminate\Support\Str;
 use Illuminate\Database\Seeder;
 use App\Models\Island;
+
 
 class IslandSeeder extends Seeder
 {
@@ -24,6 +26,7 @@ class IslandSeeder extends Seeder
 			['island_name'=>'Maiana'],
 			['island_name'=>'Abaiang'],
 			['island_name'=>'Tab-South'],
+
 		
 
 			
