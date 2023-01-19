@@ -63,7 +63,7 @@ class VillageController extends Controller
     public function show($id)
     {
         $village = village::find($id);
-       
+        $islands = island::find($id);
 		return view('villages.show')
 	        ->with('village',$village)
             ->with('islands',$islands);
