@@ -48,7 +48,7 @@ class IslandController extends Controller
             $input = $request->all();
             // dd($input);
         
-            $results = Island::create(['uuid'=>Str::uuid(), 'island_name'=>$request->island_id]);
+            $results = Island::create(['island_name'=>$request->island_id]);
 
 
         return redirect()->route('island.index');
@@ -56,7 +56,7 @@ class IslandController extends Controller
 
     public function show($uuid)
     {
-        $island = Island::where('uuid', $uuid)->firstOrFail();
+        $island = Island::where('id', $uuid)->firstOrFail();
 
 		return view('islands.show')
 	        ->with('island',$island);
@@ -64,17 +64,15 @@ class IslandController extends Controller
 
     public function edit($uuid)
     {
-        $island = island::where('uuid', $uuid)->firstOrFail();
+        $island = island::where('id', $uuid)->firstOrFail();
 		return view('islands.edit')->withIsland($island);
     }
 
 
-    public function update(Request $request, $uuid)
+    public function update(Request $request, $id)
     {
-        // $island = $request->all();
 
-        $data = Island::find($uuid)->update($request->all());
-
+        $data = Island::find($id)->update($request->all());
 
            return redirect()->route('island.index')->with('message', 'Updated successfully.');
     }

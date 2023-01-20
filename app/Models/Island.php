@@ -12,7 +12,7 @@ class Island extends Model
 
     
     protected $table = 'islands';
-    protected $fillable = ['island_name', 'uuid'];
+    protected $fillable = ['island_name'];
 
     public function villages(){
 

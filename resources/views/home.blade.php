@@ -140,7 +140,7 @@
       </div> <!-- .container -->
     </nav> <!-- .navbar -->
 
-    <div class="page-banner bg-img bg-img-parallax overlay-dark" style="background-image:url({{url('assets/img/bg_image_3.jpg')}})">
+    <div class="page-banner bg-img bg-img-parallax overlay-dark" style="background-image:url({{url('assets/img/nn.jpg')}})" style="">
       <!-- <div class="container h-100">
         <div class="row justify-content-center align-items-center h-100">
           <div class="col-lg-8">
@@ -162,7 +162,7 @@
       <div class="container">
         <div class="text-center">
           <!-- <div class="subhead">Our Teams</div> -->
-          <h2 class="title-section">The Expert Team on ReveTive</h2>
+          <h2 class="title-section">Ministry Of Fisheries and Marine Development</h2>
         </div>
 
         <div class="owl-carousel team-carousel mt-5">
