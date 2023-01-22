@@ -158,21 +158,20 @@
   </header>
 
   <main>
-       <div class="page-section">
+       <div class="page-section" style="background-color:gray">
       <div class="container">
-        <div class="text-center">
+        <div class="text-center" style="background-color:gray">
           <!-- <div class="subhead">Our Teams</div> -->
           <h2 class="title-section">Ministry Of Fisheries and Marine Development</h2>
         </div>
 
-        <div class="owl-carousel team-carousel mt-5">
+        <div class="owl-carousel team-carousel mt-5" style="background-color:gray">
           <div class="team-wrap">
             <div class="team-profile">
-              <img src="{{asset('assets/img/teams/team_1.jpg')}}" alt="">
+              <img src="{{asset('assets/img/teams/tech.jpg')}}" alt="">
             </div>
             <div class="team-content">
-              <h5>Walter White</h5>
-              <div class="text-sm fg-grey">Chief Executive Officer</div>
+              <h5>Technical Devision</h5>
 
               <div class="social-button">
                 <a href="#"><span class="mai-logo-facebook-messenger"></span></a>
@@ -184,12 +183,10 @@
 
           <div class="team-wrap">
             <div class="team-profile">
-              <img src="{{URL::asset('assets/img/teams/team_2.jpg')}}" alt="">
+              <img src="{{URL::asset('assets/img/teams/data.jpg')}}" alt="">
             </div>
             <div class="team-content">
-              <h5>Sarah Johanson</h5>
-              <div class="text-sm fg-grey">Chief Technology Officer</div>
-
+              <h5>Database Devision</h5>
               <div class="social-button">
                 <a href="#"><span class="mai-logo-facebook-messenger"></span></a>
                 <a href="#"><span class="mai-call"></span></a>
@@ -200,12 +197,10 @@
 
           <div class="team-wrap">
             <div class="team-profile">
-              <img src="{{URL::asset('assets/img/teams/team_3.jpg')}}" alt="">
+              <img src="{{URL::asset('assets/img/teams/media.jpg')}}" alt="">
             </div>
             <div class="team-content">
-              <h5>Anna Anderson</h5>
-              <div class="text-sm fg-grey">Product Manager</div>
-
+              <h5>Media Devision</h5>
               <div class="social-button">
                 <a href="#"><span class="mai-logo-facebook-messenger"></span></a>
                 <a href="#"><span class="mai-call"></span></a>
