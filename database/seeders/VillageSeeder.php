@@ -36,7 +36,7 @@ class VillageSeeder extends Seeder
 			['island_id'=>5,'uuid'=> Str::uuid(),'village_name'=>'Tuarabu', 'village_description' =>'To tell'],
 			['island_id'=>6,'uuid'=> Str::uuid(),'village_name'=>'Tewai', 'village_description' =>'Hitting spear'],
 			['island_id'=>6,'uuid'=> Str::uuid(),'village_name'=>'Taku', 'village_description' =>'Bend'],
-			['island_id'=>6,'uuid'=> Str::uuid(),'village_name'=>'Taungaeaka', 'village_description' =>'Statisfatory Pleasure'],
+			['island_id'=>7,'uuid'=> Str::uuid(),'village_name'=>'Nanikaai', 'village_description' =>'Safe Water'],
            
 		
 

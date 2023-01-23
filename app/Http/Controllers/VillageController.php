@@ -21,6 +21,7 @@ class VillageController extends Controller
         //dd($employees);
 
         // Pass data to view
+        
         return view('villages.index', ['villages' => $villages]);
 
         //return 'welcome'; //view('employees.index');

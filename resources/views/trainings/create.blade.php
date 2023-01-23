@@ -104,12 +104,16 @@
                                                    </div>
                                                    <div class="form-group col-md-3">
                                                    <label for="village_id"><span class="text-danger">*</span> VILLAGE NAME</label>
-                                                   <select name="village_id" id="island_id" class="form-control">
-                                                        <option value="" selected disabled>{{ __('Select one') }}</option>
-                                                        @foreach($villages as $village)
-                                                        <option value="{{ $village['id'] }}">{{ $village['village_name'] }}</option>
-                                                        @endforeach
-                                                    </select>
+                                                  
+                                                      <select name="village_id" id="island_id" class="form-control">
+
+                                                     <!--link nakon te village-->
+                                                         <option value="" selected disabled>{{ __('Select one') }}</option>
+                                                         @foreach($villages as $village)
+                                                         <option value="{{ $village['id'] }}">{{ $village['village_name'] }}</option>
+                                                         @endforeach      
+                                                         </select>
+                                                         
                                                            @if(session()->has('error'))
                                                             <div class="alert alert-danger">
                                                                {{ session()->get('error') }}

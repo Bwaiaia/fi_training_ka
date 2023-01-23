@@ -7,15 +7,61 @@
 
     <section class="content-header">
         <h1>
-            {{ __('Village') }}
+            {{ __('Manage Village') }}
         </h1>
-         <nav aria-label="breadcrumb">
+
+<nav class="navbar navbar-expand-lg bg-body-tertiary">
+  <div class="container-fluid">
+    <a class="btn btn-outline-success"  href="{{ route('village.create') }}">{{ __(' Add village') }}</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="{{ url('/home') }}">Dashboard</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" aria-current="page">Village</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Other-Tabs
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="{{route('employee.index')}}">Employee</a></li>
+            <li><a class="dropdown-item" href="{{route('island.index')}}">Island</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="{{route('training_type.index')}}">Training Types</a></li>
+            <li><a class="dropdown-item" href="{{route('training.index')}}">Training Details</a></li>
+          </ul>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link disabled">Disabled</a>
+        </li>
+      </ul>
+      <form class="d-flex" role="search">
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success" type="submit">Search</button>
+      </form>
+    </div>
+  </div>
+</nav>
+
+        <!--
+         <nav aria-label="breadcrumb" class="navbar navbar-light" style="background-color: #e3f2fd;">
             <ol class="breadcrumb">
+            <li><a href="{{ route('village.create') }}" class="alert-link"><button type="button" class="btn btn-primary btn-sm float-end">{{ __(' Add village') }}</button></a></li>
                 <li class="breadcrumb-item"><a href="{{ url('/home') }}">Dashboard</a></li>
                 <li class="breadcrumb-item"><a href="{{ route('employee.index') }}">Employee List</a></li>
                 <li class="breadcrumb-item active" aria-current="page">village List</li>
+                <div class="justify-content-right">
+                    <li><input  type="text" id="myInput" class="form-control" placeholder="{{ __('Search..') }}"></li>
+                </div>
             </ol>
         </nav>
+        -->
     </section>
 
     <!-- Main content -->
@@ -23,11 +69,9 @@
         <!-- Default box -->
         <div class="box">
             <div class="box-header with-border">
-                <h3 class="box-title">{{ __('Manage village') }}</h3>
-
                 <div class="box-header with-border">
-                        <div class="alert alert-info clearfix">
-                            <a href="{{ route('village.create') }}" class="alert-link"><button type="button" class="btn btn-primary btn-sm float-end">{{ __(' Add village') }}</button></a> 
+                        <div class="">
+                            <!--Add Button--> 
                         </div>
                      </div>
             </div>
@@ -37,7 +81,7 @@
             </div>
                 
                 <div  class="col-md-6">
-                    <input type="text" id="myInput" class="form-control" placeholder="{{ __('Search..') }}">
+                    <!--Search Blank-->
                 </div>
 
                 <!-- Notification Box -->
@@ -62,6 +106,7 @@
                             <th>{{ __(' SL#') }}</th>
                             <th>{{ __('Island Name') }}</th>
                             <th>{{ __('Village Name') }}</th>
+                            <th>{{ __('Village Description') }}</th>
                             <th>{{ __(' Created At') }}</th>
                             <th class="text-center">{{ __('Actions') }}</th>
                         </tr>
@@ -72,9 +117,9 @@
                         @foreach($villages as $village)
                         <tr>
                             <td>{{ $sl++ }}</td>
-                            
+                             <td>{{ $village->island->island_name }}</td>
                             <td>{{ $village['village_name'] }}</td>
-                            <td>{{ $village->island->island_name }}</td>
+                            <td>{{ $village['village_description'] }}</td>
                             
                         
                             <td class="text-center">{{ date("d F Y", strtotime($village['created_at'])) }}</td>

@@ -26,6 +26,7 @@ class IslandSeeder extends Seeder
 			['island_name'=>'Maiana'],
 			['island_name'=>'Abaiang'],
 			['island_name'=>'Tab-South'],
+            ['island_name'=>'Tarawa'],
 
 		
 

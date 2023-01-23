@@ -45,6 +45,15 @@
                                                 <p>{{$village['village_name']}}</p>
                                             </div>
                                         </div>
+
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <label>Village Description:</label>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <p>{{$village['village_description']}}</p>
+                                            </div>
+                                        </div>
                                  
                                       
                                        

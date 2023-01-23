@@ -19,8 +19,8 @@ class TrainingDetailController extends Controller
     {
         
         $trainings = TrainingDetail::all();
-        //dd($employees);
-
+        
+        $trainings = TrainingDetail::select('select * from island where id = :id', ['id' => 1]);
         // Pass data to view
         return view('training_details.index', ['trainings' => $trainings]);
 
