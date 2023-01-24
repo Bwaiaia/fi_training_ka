@@ -5,40 +5,55 @@
 <div class="container">
 <div class="content-wrapper">
 
-    <section class="content-header">
+<section class="content-header">
         <h1>
-            {{ __('EMPLOYEE') }}
+            {{ __('Manage Employee') }}
         </h1>
-         <nav aria-label="breadcrumb">
-            <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="{{ url('/home') }}">Dashboard</a></li>
-                <li class="breadcrumb-item"><a href="{{ url('/island') }}">Island List</a></li>
-                <li class="breadcrumb-item active" aria-current="page">Employee List</li>
-            </ol>
-        </nav>
+
+<nav class="navbar navbar-expand-lg bg-body-tertiary">
+  <div class="container-fluid">
+    <a class="btn btn-outline-success"  href="{{ route('employee.create') }}">{{ __(' Add Employee') }}</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="{{ url('/home') }}">Dashboard</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" aria-current="page">Employee</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Quick-Links
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="{{route('village.index')}}">Village</a></li>
+            <li><a class="dropdown-item" href="{{route('island.index')}}">Island</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="{{route('training_type.index')}}">Training Types</a></li>
+            <li><a class="dropdown-item" href="{{route('training.index')}}">Training Details</a></li>
+          </ul>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link disabled">Disabled</a>
+        </li>
+      </ul>
+      <form class="d-flex" role="search">
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success" type="submit">Search</button>
+      </form>
+    </div>
+  </div>
+</nav>
     </section>
 
     <!-- Main content -->
     <section class="content">
         <!-- Default box -->
-        <div class="box">
-            <div class="box-header with-border">
-                <h3 class="box-title">{{ __('Manage Employee') }}</h3>
-
-                <div class="box-header with-border">
-                        <div class="alert alert-info clearfix">
-                            <a href="{{ route('employee.create') }}" class="alert-link"><button type="button" class="btn btn-primary btn-sm float-end">{{ __(' Add Employee') }}</button></a> 
-                        </div>
-                     </div>
-            </div>
-            <div class="box-body">
-                
-            
-            </div>
-                
-                <div  class="col-md-6">
-                    <input type="text" id="myInput" class="form-control" placeholder="{{ __('Search..') }}">
-                </div>
+        
 
                 <!-- Notification Box -->
                 <div class="col-md-12">
@@ -62,7 +77,8 @@
                             <th>{{ __(' SL#') }}</th>
                             <th>{{ __(' ID') }}</th>
                           
-                            <th>{{ __(' Full Name') }}</th>
+                            <th>{{ __(' First Name') }}</th>
+                            <th>{{ __(' Last Name') }}</th>
                             <th>{{ __(' Age') }}</th>
                             <th>{{ __(' Island') }}</th>
                             <th>{{ __(' Created At') }}</th>
@@ -77,7 +93,8 @@
                             <td>{{ $sl++ }}</td>
                             <td>{{ $employee['employee_id'] }}</td>
                             
-                            <td>{{ $employee['name'] }}</td>
+                            <td>{{ $employee['fname'] }}</td>
+                            <td>{{ $employee['lname'] }}</td>
                             <td>{{ $employee['age'] }}</td>
                             <td>{{ $employee['island'] }}</td>
                         

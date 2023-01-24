@@ -34,9 +34,9 @@
                                                 <div class="row">
                                                
                                                    <div class="form-group col-md-6">
-                                                      <label for="name"><span class="text-danger">*</span> FULL NAME</label>
+                                                      <label for="fname"><span class="text-danger">*</span> First Name</label>
                                                    
-                                                            <input type="text" class="form-control {{ $errors->has('name') ? ' is-invalid' : '' }}" value="{{ old('name') }}" id="name" placeholder="Enter a Full name" name="name" autocomplete="off">
+                                                            <input type="text" class="form-control {{ $errors->has('fname') ? ' is-invalid' : '' }}" value="{{ old('fname') }}" id="name" placeholder="Enter a First name" name="fname" autocomplete="off">
                                                            @if(session()->has('error'))
                                                             <div class="alert alert-danger">
                                                                {{ session()->get('error') }}
@@ -45,7 +45,18 @@
                                                    
                                                    </div>
                                                    <div class="form-group col-md-6">
-                                                      <label for="age"><span class="text-danger">*</span> age</label>
+                                                      <label for="lname"><span class="text-danger">*</span> Last Name</label>
+                                                   
+                                                            <input type="text" class="form-control {{ $errors->has('lname') ? ' is-invalid' : '' }}" value="{{ old('lname') }}" id="lname" placeholder="Enter a Last name" name="lname" autocomplete="off">
+                                                           @if(session()->has('error'))
+                                                            <div class="alert alert-danger">
+                                                               {{ session()->get('error') }}
+                                                            </div>
+                                                             @endif
+                                                   
+                                                   </div>
+                                                   <div class="form-group col-md-6">
+                                                      <label for="age"><span class="text-danger">*</span> Age</label>
                                                      
                                                             <input type="age" class="form-control {{ $errors->has('age') ? ' is-invalid' : '' }}" value="{{ old('age') }}" id="age" placeholder="Enter age" name="age" autocomplete="off">
                                                             @if ($errors->has('receive_date'))

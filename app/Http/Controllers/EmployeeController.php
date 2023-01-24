@@ -46,7 +46,10 @@ class EmployeeController extends Controller {
 		
 		            $input = $request->all();
 	
-					$results = Employee::create($input);
+					$results = Employee::create(['fname'=>$request->id,
+												  'lname'=>$request->id,
+												   'age'=>$request->id,
+												    'island'=>$request->id]);
 
 			
 				return redirect()->route('employee.index')->with('exception', 'Operation failed !');

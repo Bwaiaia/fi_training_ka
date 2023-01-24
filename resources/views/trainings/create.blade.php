@@ -110,7 +110,8 @@
                                                      <!--link nakon te village-->
                                                          <option value="" selected disabled>{{ __('Select one') }}</option>
                                                          @foreach($villages as $village)
-                                                         <option value="{{ $village['id'] }}">{{ $village['village_name'] }}</option>
+                                                         <option @if
+                                                         value="{{ $village['id'] }}">{{ $village['village_name'] }}</option>
                                                          @endforeach      
                                                          </select>
                                                          
